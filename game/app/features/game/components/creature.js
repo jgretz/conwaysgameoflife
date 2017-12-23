@@ -14,10 +14,12 @@ export default class Creature extends Component {
 
   render() {
     const {jelly, face} = this.state;
+    const style = {
+      backgroundImage: `url(${jelly})`,
+    };
 
     return (
-      <div className="creature">
-        <img src={jelly} className="creature-jelly" />
+      <div className="creature" style={style}>
         <img src={face} className="creature-face" />
       </div>
     );
