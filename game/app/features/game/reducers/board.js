@@ -2,7 +2,7 @@ import {stateReducer} from 'truefit-react-utils';
 import {Record} from 'immutable';
 import {CHANGE_HEIGHT, CHANGE_WIDTH} from '../actions';
 
-const Board = Record({height: 10, width: 10});
+const Board = Record({height: 15, width: 15});
 const INITIAL = new Board();
 
 export default stateReducer(INITIAL, {
