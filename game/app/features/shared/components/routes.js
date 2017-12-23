@@ -5,10 +5,8 @@ import NotFound from './notFound';
 import {Game} from '../../game/components';
 
 export default () => (
-  <div>
-    <Switch>
-      <Route exact path="/" component={Game} />
-      <Route component={NotFound} />
-    </Switch>
-  </div>
+  <Switch>
+    <Route exact path="/" component={Game} />
+    <Route component={NotFound} />
+  </Switch>
 );

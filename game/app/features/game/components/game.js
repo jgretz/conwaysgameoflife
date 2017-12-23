@@ -1,5 +1,9 @@
 import React from 'react';
 
+import Board from './board';
+
 export default () => (
-  <div>Hello Conway</div>
+  <div className="board-container">
+    <Board />
+  </div>
 );
