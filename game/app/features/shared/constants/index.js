@@ -15,3 +15,6 @@ export const FACE_IMAGES = [
   require('../../../images/Face5.png'),
   require('../../../images/Face6.png'),
 ];
+
+export const HEIGHT = 25;
+export const WIDTH = 25;

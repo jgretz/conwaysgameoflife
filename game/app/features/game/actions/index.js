@@ -1,2 +1,1 @@
-export * from './changeHeight';
-export * from './changeWidth';
+export * from './toggleSpace';

@@ -1,11 +1,23 @@
 import {stateReducer} from 'truefit-react-utils';
-import {Record} from 'immutable';
-import {CHANGE_HEIGHT, CHANGE_WIDTH} from '../actions';
+import {fromJS} from 'immutable';
 
-const Board = Record({height: 25, width: 25});
-const INITIAL = new Board();
+import {TOGGLE_SPACE} from '../actions';
+import {WIDTH, HEIGHT} from '../../shared/constants';
 
-export default stateReducer(INITIAL, {
-  [CHANGE_HEIGHT]: (board, payload) => board.set('height', payload),
-  [CHANGE_WIDTH]: (board, payload) => board.set('width', payload),
+const BOARD = [];
+for (let x = 0; x < HEIGHT; x++) {
+  BOARD[x] = [];
+
+  for (let y = 0; y < WIDTH; y++) {
+    BOARD[x][y] = false;
+  }
+}
+
+export default stateReducer(fromJS(BOARD), {
+  [TOGGLE_SPACE]: (board, payload) => {
+    const addr = [payload.x, payload.y];
+    const flag = board.getIn(addr);
+
+    return board.setIn(addr, !flag);
+  },
 });

@@ -1,18 +1,16 @@
 import React from 'react';
-import {connect} from 'react-redux';
 
 import Space from './space';
+import {HEIGHT, WIDTH} from '../../shared/constants';
 
-import {boardSelector} from '../selectors';
-
-const render = (height, width) => {
-  const spaceHeight = 100 / height;
-  const spaceWidth = 100 / width;
+const render = () => {
+  const spaceHeight = 100 / HEIGHT;
+  const spaceWidth = 100 / WIDTH;
 
   const board = [];
 
-  for (let x = 0; x < width; x++) {
-    for (let y = 0; y < height; y++) {
+  for (let x = 0; x < WIDTH; x++) {
+    for (let y = 0; y < HEIGHT; y++) {
       board.push((
         <Space key={`${x}-${y}`} x={x} y={y} height={spaceHeight} width={spaceWidth} />
       ));
@@ -22,16 +20,10 @@ const render = (height, width) => {
   return board;
 };
 
-const board = ({board}) => (
+export default () => (
   <div className="board">
     {
-      render(board.height, board.height)
+      render()
     }
   </div>
 );
-
-const mapStateToProps = state => ({
-  board: boardSelector(state),
-});
-
-export default connect(mapStateToProps)(board);
