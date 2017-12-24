@@ -3,8 +3,12 @@
   justify-content: center;
   align-items: center;
 
-  height: 100%;
+  height: 95%;
   width: 100%;
+
+  margin: auto;
+
+  max-width: 1024px;
 }
 
 .board {
@@ -31,6 +35,10 @@
 }
 
 .creature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   height: 80%;
   width: 80%;  
   
@@ -41,9 +49,6 @@
 }
 
 .creature-face {
-  margin-top: 25%;
-  margin-left: 25%;
-
   height: 50%;
   width: 50%;
 }

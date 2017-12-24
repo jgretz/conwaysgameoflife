@@ -19,4 +19,4 @@ export const FACE_IMAGES = [
 export const HEIGHT = 25;
 export const WIDTH = 25;
 
-export const GAME_LOOP = 1000;
+export const GAME_LOOP = 500;

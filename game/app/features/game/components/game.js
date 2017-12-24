@@ -1,23 +1,12 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React from 'react';
 
 import Board from './board';
+import GameLoop from './gameLoop';
 
-import {advanceGeneration} from '../actions';
-import {GAME_LOOP} from '../../shared/constants';
+export default () => (
+  <div className="board-container">
+    <Board />
 
-class Game extends Component {
-  componentWillMount() {
-    setInterval(this.props.advanceGeneration, GAME_LOOP);
-  }
-
-  render() {
-    return (
-      <div className="board-container">
-        <Board />
-      </div>
-    );
-  }
-}
-
-export default connect(null, {advanceGeneration})(Game);
+    <GameLoop />
+  </div>
+);

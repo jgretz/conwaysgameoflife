@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router';
 
+import {Menu} from './features/menu/components';
 import {Routes} from './features/shared/components';
 
 class App extends Component {
   render() {
     return (
-      <Routes />
+      <div className="app">
+        <Menu />
+        <Routes />
+      </div>
     );
   }
 }
