@@ -4,15 +4,26 @@ import {WIDTH, HEIGHT} from '../../shared/constants';
 export const NEW_GENERATION = 'NEW_GENERATION';
 
 const livingNeighbors = (current, x, y) => {
+  const get = (offsetX, offSetY) => {
+    const posX = x + offsetX;
+    const posY = y + offSetY;
+
+    if (x < 0 || x >= WIDTH || y < 0 || y >= HEIGHT) {
+      return false;
+    }
+
+    return current.getIn([posX, posY]);
+  };
+
   const neighbors = [
-    current.getIn([x - 1, y - 1], false),
-    current.getIn([x, y - 1], false),
-    current.getIn([x + 1, y - 1], false),
-    current.getIn([x - 1, y], false),
-    current.getIn([x + 1, y], false),
-    current.getIn([x - 1, y + 1], false),
-    current.getIn([x, y + 1], false),
-    current.getIn([x + 1, y + 1], false),
+    get(-1, -1),
+    get(0, -1),
+    get(1, -1),
+    get(-1, 0),
+    get(1, 0),
+    get(-1, 1),
+    get(0, 1),
+    get(1, 1),
   ];
 
   return neighbors.filter(x => x).length;

@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "node"
+after_success:
+  - yarn build
+before_deploy:
+  - cd ./lib
+deploy:
+  provider: heroku
+  api_key:
+    secure: vzMTKz+bg0z1KbCk9oV2G2Pwt1L+xadIVRNdCHE/N0pv9BnwPhn1L5+KsP0264brukuozufq6E/l5M70LtW9JxxXrMmK4PcNRh3SZsWzzde9CzjtrGbmFd0PRUR8pgWk6IThhJnaNLOPxvSFEn7j9HxYetPyigS3VXkz6XqH3/EJDM4XhlcY6QMHVjS1d+h7Qo10mTzRH24yV3E4mSQ8yoqNmeVsVNgARf/rHsJs6NCxULRZP+/MvAXY4E0pbce5NF5GJxHV5isy6Cwomlfuv8ql2k26/+UcMQCWulNaFMD4aJnKKir6FRX7M/zp9JNZ9HT14W1bNxco/3HN00z2O0AuLh+uR1zdiNqIoTvaJ5KH5MRvodzvl4H4O+TS0N+YYMsrWYM7sZdLEuNBrFGQQDe24g5Lf0pFfh0NMwBRWugvuLSAxl8EPaDMm45u7CUiTr9bubki37vbOrgPn55kypMR3OtHCYo22seymjXBR9J7aCFcmQ+hPT+ZCmr8Iuo67/ruJ85W8uC/mKw7mv4UOZsj9j4WuL9Ey0qboklJgePiyIBbJXEMpL13/iivwWPMmdZjlOq7h6bgY24LS1NnmrQ2nm0MEm2IhqdfncW98KOKQYoXqSmgqqPYB8gM3mbXVeSb7N26Pze9S7etdtQ1K9NxgUETUBJX1dNZSdmQ1U0=
+  app: conway-gretz
+  skip_cleanup: true
+  on:
+    repo: jgretz/conwaysgameoflife

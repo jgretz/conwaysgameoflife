@@ -1,0 +1,21 @@
+{
+  "name": "conway-server",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "babel-node src/index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "node-bits": "^0.0.34",
+    "node-bits-express": "^0.0.21",
+    "node-bits-spa": "^0.0.8"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-1": "^6.22.0",
+    "babel-register": "^6.26.0",
+    "babel-runtime": "^6.26.0"
+  }
+}
