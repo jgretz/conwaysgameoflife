@@ -1,7 +1,7 @@
 import {stateReducer} from 'truefit-react-utils';
 import {fromJS} from 'immutable';
 
-import {TOGGLE_SPACE} from '../actions';
+import {TOGGLE_SPACE, NEW_GENERATION} from '../actions';
 import {WIDTH, HEIGHT} from '../../shared/constants';
 
 const BOARD = [];
@@ -20,4 +20,6 @@ export default stateReducer(fromJS(BOARD), {
 
     return board.setIn(addr, !flag);
   },
+
+  [NEW_GENERATION]: (_, payload) => fromJS(payload),
 });
