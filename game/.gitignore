@@ -1,6 +1,0 @@
-.idea/
-node_modules/
-dist/
-npm-debug.log
-*.min.css
-.DS_Store
